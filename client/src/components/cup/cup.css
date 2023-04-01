@@ -1,0 +1,225 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle,
+    rgba(255, 226, 128, 1) 0%,
+    rgba(255, 223, 115, 1) 100%
+  );
+}
+
+.glass-ctr {
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  width: 300px;
+  height: 420px;
+  background-color: rgb(255, 255, 255);
+  /* background-color: rgba(0, 0, 0); */
+  position: absolute;
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.water-ctr {
+  top: -10;
+  width: 250px;
+  height: 400px;
+  overflow: hidden;
+  background-color: rgba(255, 226, 128, 0.5);
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  position: relative;
+}
+
+.water {
+  width: 4000px;
+  height: 800px;
+  background-image: url(coffee.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.high {
+  animation: high 10s;
+  animation-fill-mode: forwards;
+}
+
+.low {
+  animation: first 10s;
+  animation-fill-mode: forwards;
+}
+
+.first {
+  animation: first 10s;
+  animation-fill-mode: forwards;
+}
+
+.second {
+  animation: second 10s;
+  animation-fill-mode: forwards;
+}
+
+.third {
+  animation: third 10s;
+  animation-fill-mode: forwards;
+}
+
+.fourth {
+  animation: fourth 10s;
+  animation-fill-mode: forwards;
+}
+.fifth {
+  animation: fifth 10s;
+  animation-fill-mode: forwards;
+}
+.sixth {
+  animation: sixth 10s;
+  animation-fill-mode: forwards;
+}
+.seventh {
+  animation: seventh 10s;
+  animation-fill-mode: forwards;
+}
+.eighth {
+  animation: eighth 10s;
+  animation-fill-mode: forwards;
+}
+.ninth {
+  animation: ninth 10s;
+  animation-fill-mode: forwards;
+}
+.tenth {
+  animation: tenth 10s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes high {
+  0% {
+    right: 0;
+    top: 400px;
+  }
+  100% {
+    right: 3400px;
+    top: -10px;
+  }
+}
+
+@keyframes first {
+  0% {
+    right: 0;
+    top: 400px;
+  }
+  100% {
+    right: 3400px;
+    top: 280px;
+  }
+}
+@keyframes second {
+  0% {
+    right: 2500px;
+    top: 280px;
+  }
+  100% {
+    right: 3400px;
+    top: 248px;
+  }
+}
+@keyframes third {
+  0% {
+    right: 2500px;
+    top: 248px;
+  }
+  100% {
+    right: 3400px;
+    top: 216px;
+  }
+}
+@keyframes fourth {
+  0% {
+    right: 2500px;
+    top: 216px;
+  }
+  100% {
+    right: 3400px;
+    top: 184px;
+  }
+}
+@keyframes fifth {
+  0% {
+    right: 2500px;
+    top: 184px;
+  }
+  100% {
+    right: 3400px;
+    top: 152px;
+  }
+}
+@keyframes sixth {
+  0% {
+    right: 2500px;
+    top: 152px;
+  }
+  100% {
+    right: 3400px;
+    top: 120px;
+  }
+}
+@keyframes seventh {
+  0% {
+    right: 2500px;
+    top: 120px;
+  }
+  100% {
+    right: 3400px;
+    top: 88px;
+  }
+}
+@keyframes eighth {
+  0% {
+    right: 2500px;
+    top: 88px;
+  }
+  100% {
+    right: 3400px;
+    top: 56px;
+  }
+}
+@keyframes ninth {
+  0% {
+    right: 2500px;
+    top: 56px;
+  }
+  100% {
+    right: 3400px;
+    top: 24px;
+  }
+}
+@keyframes tenth {
+  0% {
+    right: 2500px;
+    top: 24px;
+  }
+  100% {
+    right: 3400px;
+    top: -100px;
+  }
+}
+
+.caffeine-number {
+  position: absolute;
+  z-index: 10000;
+}
