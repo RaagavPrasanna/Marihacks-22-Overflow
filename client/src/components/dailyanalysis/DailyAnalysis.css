@@ -1,4 +1,8 @@
-h2 {
+.DailyAnalysis {
     position: absolute;
-    top: 20px;
+    top: 100px;
+}
+
+h2 {
+    margin-bottom: 100px;
 }
