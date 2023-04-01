@@ -7,14 +7,15 @@ import DailyAnalysis from "./components/dailyanalysis/DailyAnalysis.jsx";
 import WeeklyAnalysis from "./components/weeklyanalysis/WeeklyAnalysis.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/nav/Nav.jsx";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SimpleDialog from "./components/home/SimpleDialog.jsx";
 
 function App() {
   const [usersSelections, setUsersSelections] = useState([]);
   const [caffeine, setCaffeine] = useState(0);
-  const [emoji, setEmoji] = useState("☕")
-  const [emojiMeaning, setEmojiMeaning] = useState("Coffee!")
+  const [emoji, setEmoji] = useState("☕");
+  const [emojiMeaning, setEmojiMeaning] = useState("Coffee!");
   const days = [
     "Sunday",
     "Monday",
@@ -31,23 +32,23 @@ function App() {
     }, 0);
     setCaffeine(caffeine);
     localStorage.setItem("caffeine", JSON.stringify(caffeine));
-    if (caffeine <= 200){
-      setEmojiMeaning("You need more caffeine!")
-      setEmoji("😴")
-    } else if (caffeine <= 500 && caffeine > 200){
-      setEmojiMeaning("You are doing great!")
-      setEmoji("😖")
-    } else if (caffeine <= 700 && caffeine > 500){
-      setEmojiMeaning("You are around the recommended amount!")
-      setEmoji("😁")
-    } else if (caffeine <= 1000 && caffeine > 700){
-      setEmojiMeaning("You are over the recommended amount!")
-      setEmoji("😵")
-    } else if(caffeine > 1000){
-      setEmojiMeaning("TOO MUCH CAFFEINE!")
-      setEmoji("☠️")
+    if (caffeine <= 200) {
+      setEmojiMeaning("You need more caffeine!");
+      setEmoji("😴");
+    } else if (caffeine <= 500 && caffeine > 200) {
+      setEmojiMeaning("You are doing great!");
+      setEmoji("😖");
+    } else if (caffeine <= 700 && caffeine > 500) {
+      setEmojiMeaning("You are around the recommended amount!");
+      setEmoji("😁");
+    } else if (caffeine <= 1000 && caffeine > 700) {
+      setEmojiMeaning("You are over the recommended amount!");
+      setEmoji("😵");
+    } else if (caffeine > 1000) {
+      setEmojiMeaning("TOO MUCH CAFFEINE!");
+      setEmoji("☠️");
     }
-  }, [usersSelections])
+  }, [usersSelections]);
 
   useEffect(() => {
     const usersSelections = JSON.parse(localStorage.getItem("usersSelections"));
@@ -59,7 +60,7 @@ function App() {
   const addProduct = (product) => {
     toast(`${product.drink} added to your daily selections!`, {
       position: toast.POSITION.BOTTOM_LEFT,
-      autoClose: 2000
+      autoClose: 2000,
     });
     const copy = [...usersSelections];
     copy.push(product);
@@ -107,8 +108,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Nav/>
-        <ToastContainer progressClassName="toastProgress"bodyClassName="toastBody"/>
+        <Nav />
+        <ToastContainer
+          progressClassName="toastProgress"
+          bodyClassName="toastBody"
+        />
         <Routes>
           <Route
             exact
@@ -137,7 +141,9 @@ function App() {
           <Route
             exact
             path="/WeeklyAnalysis"
-            element={<WeeklyAnalysis usersSelections={usersSelections} days={days}/>}
+            element={
+              <WeeklyAnalysis usersSelections={usersSelections} days={days} />
+            }
           />
         </Routes>
       </BrowserRouter>

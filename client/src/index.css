@@ -30,6 +30,7 @@ body {
   background-color: #ece6e1;
   width: 100%;
   height: 100vh;
+  overflow-y: hidden;
 }
 
 h1 {
