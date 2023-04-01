@@ -18,15 +18,18 @@
   vertical-align: middle;
 }
 
-.Link {
-  color: black;
-  margin: 2em;
-  font-weight: 900;
-  transition: 0.3s;
+.Link{
+    color: black;
+    margin: 2em;
+    font-size: 1.05em;
+    align-self: center;
+    font-weight: 1000;
+    transition: 0.3s;
 }
 
-.Link:hover {
-  color: white;
+.Link:hover{
+    color: white;
+    background-color: #C8B286;
 }
 
 #LinkHome {
