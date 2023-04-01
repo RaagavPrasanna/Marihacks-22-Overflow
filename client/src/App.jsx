@@ -8,9 +8,24 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Nav from "./components/nav/Nav.jsx";
 
 function App() {
+
+  const [usersSelections, setUsersSelections] = useState([]);
+
+  const addProduct = (product) => {
+    const copy = [...usersSelections];
+    copy.push(product);
+    setUsersSelections([...copy]);
+  } 
+
   return (
     <div className="App">
-      <Nav></Nav>
+      <BrowserRouter>
+        <Nav/>
+        <Routes>
+          <Route exact path="/" element={<MainPage usersSelections={usersSelections} addProduct={addProduct}/>} />
+          <Route exact path="/Analysis" element={<Analysis/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

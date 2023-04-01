@@ -1,10 +1,15 @@
 import { useState } from 'react'
+import SearchBar from "./SearchBar.jsx"
+import data from '../../../../server/data/data.js'
+import Selections from "./Selections.jsx"
 
-function MainPage() {
+function MainPage({usersSelections, addProduct}) {
+
 
   return (
-    <div className="MainPage">
-        <p>Main Page</p>
+    <div style={{display: "flex", alignItems: "center"}}>
+        <SearchBar addProduct={addProduct} placeholder="Enter product name" data={data} />
+        <Selections usersSelections={usersSelections}/>
     </div>
   )
 }
