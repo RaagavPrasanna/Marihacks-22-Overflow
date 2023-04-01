@@ -15,7 +15,6 @@ function MainPage({ usersSelections, clearSelections, addProduct, caffeine }) {
           placeholder="Enter product name"
           data={data}
         />
-        <Selections usersSelections={usersSelections} />
       </div>
       <Button
         onClick={() => {

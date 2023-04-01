@@ -13,6 +13,8 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [usersSelections, setUsersSelections] = useState([]);
   const [caffeine, setCaffeine] = useState(0);
+  const [emoji, setEmoji] = useState("☕")
+  const [emojiMeaning, setEmojiMeaning] = useState("Coffee!")
   const days = [
     "Sunday",
     "Monday",
@@ -29,6 +31,22 @@ function App() {
     }, 0);
     setCaffeine(caffeine);
     localStorage.setItem("caffeine", JSON.stringify(caffeine));
+    if (caffeine <= 200){
+      setEmojiMeaning("You need more caffeine!")
+      setEmoji("😴")
+    } else if (caffeine <= 500 && caffeine > 200){
+      setEmojiMeaning("You are doing great!")
+      setEmoji("😖")
+    } else if (caffeine <= 700 && caffeine > 500){
+      setEmojiMeaning("You are around the recommended amount!")
+      setEmoji("😁")
+    } else if (caffeine <= 1000 && caffeine > 700){
+      setEmojiMeaning("You are over the recommended amount!")
+      setEmoji("😵")
+    } else if(caffeine > 1000){
+      setEmojiMeaning("TOO MUCH CAFFEINE!")
+      setEmoji("☠️")
+    }
   }, [usersSelections])
 
   useEffect(() => {
@@ -36,13 +54,6 @@ function App() {
     if (usersSelections) {
       setUsersSelections(usersSelections);
     }
-
-    // const storeDay = localStorage.getItem("day");
-    // if(storeDay === null) {
-    //   localStorage.setItem("day", days[new Date().getDay()]);
-    // } else if (storeDay !== days[new Date().getDay()]) {
-    //   localStorage.setItem("day", days[new Date().getDay()]);
-    // }
   }, []);
 
   const addProduct = (product) => {
@@ -97,8 +108,7 @@ function App() {
     <>
       <BrowserRouter>
         <Nav/>
-        <ToastContainer progressClassName="toastProgress"
-  bodyClassName="toastBody"/>
+        <ToastContainer progressClassName="toastProgress"bodyClassName="toastBody"/>
         <Routes>
           <Route
             exact
@@ -119,6 +129,8 @@ function App() {
               <DailyAnalysis
                 usersSelections={usersSelections}
                 caffeine={caffeine}
+                emoji={emoji}
+                emojiMeaning={emojiMeaning}
               />
             }
           />
