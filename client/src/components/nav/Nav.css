@@ -1,0 +1,38 @@
+.NavBar{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 80px;
+    vertical-align: middle;
+}
+
+.NavElement{
+    background-color: #C8B286;
+    position: relative;
+    display: flex;
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.Link{
+    color: black;
+    margin: 2em;
+}
+
+.Link:hover{
+    color: white;
+}
+
+#LinkHome{
+    position: absolute;
+    left:25px;
+    top: 0px;
+}
+
+#coffeeImg{
+    top: 0;
+    left: 0;
+}
