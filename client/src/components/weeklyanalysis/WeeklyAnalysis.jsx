@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Bar } from "react-chartjs-2";
+import './WeeklyAnalysis.css'
 
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
@@ -69,6 +70,12 @@ function WeeklyAnalysis({usersSelections, days}) {
           label: "Weekly Caffeine Intake",
           data: calculateCaffeine(weeklyData),
           backgroundColor: [
+            "rgba(144, 92, 24, 0.8)",
+            "rgba(193, 154, 107, 0.8)",
+            "rgba(111, 92, 24, 0.8)",
+            "rgba(144, 92, 24, 0.8)",
+            "rgba(144, 92, 24, 0.8)",
+            "rgba(144, 92, 24, 0.8)",
             "rgba(144, 92, 24, 0.8)"
           ],
           borderColor: "black",
@@ -80,14 +87,22 @@ function WeeklyAnalysis({usersSelections, days}) {
   },[weeklyData])
 
   return (
-      <div style={{height: "500px", display: 'flex', justifyContent: 'center ', alignItems: 'center'}}>
+      <div className="bar">
         <Bar width="600" height="250"
           data={chartData}
           options={{
             plugins: {
               title: {
                 display: true,
-                text: "Weekly Caffeine Intake"
+                text: "Weekly Caffeine Intake",
+                font: {
+                  size: 20
+                },
+                color: "black",
+                padding: {
+                  top: 10,
+                  bottom: 30
+                }
               },
               legend: {
                 display: false

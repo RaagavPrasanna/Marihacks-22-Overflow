@@ -7,10 +7,14 @@ import DailyAnalysis from "./components/dailyanalysis/DailyAnalysis.jsx";
 import WeeklyAnalysis from "./components/weeklyanalysis/WeeklyAnalysis.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/nav/Nav.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [usersSelections, setUsersSelections] = useState([]);
   const [caffeine, setCaffeine] = useState(0);
+  const [emoji, setEmoji] = useState("☕")
+  const [emojiMeaning, setEmojiMeaning] = useState("Coffee!")
   const days = [
     "Sunday",
     "Monday",
@@ -26,23 +30,37 @@ function App() {
       return acc + curr.caffeine;
     }, 0);
     setCaffeine(caffeine);
-  }, [usersSelections]);
+    localStorage.setItem("caffeine", JSON.stringify(caffeine));
+    if (caffeine <= 200){
+      setEmojiMeaning("You need more caffeine!")
+      setEmoji("😴")
+    } else if (caffeine <= 500 && caffeine > 200){
+      setEmojiMeaning("You are doing great!")
+      setEmoji("😖")
+    } else if (caffeine <= 700 && caffeine > 500){
+      setEmojiMeaning("You are around the recommended amount!")
+      setEmoji("😁")
+    } else if (caffeine <= 1000 && caffeine > 700){
+      setEmojiMeaning("You are over the recommended amount!")
+      setEmoji("😵")
+    } else if(caffeine > 1000){
+      setEmojiMeaning("TOO MUCH CAFFEINE!")
+      setEmoji("☠️")
+    }
+  }, [usersSelections])
 
   useEffect(() => {
     const usersSelections = JSON.parse(localStorage.getItem("usersSelections"));
     if (usersSelections) {
       setUsersSelections(usersSelections);
     }
-
-    // const storeDay = localStorage.getItem("day");
-    // if(storeDay === null) {
-    //   localStorage.setItem("day", days[new Date().getDay()]);
-    // } else if (storeDay !== days[new Date().getDay()]) {
-    //   localStorage.setItem("day", days[new Date().getDay()]);
-    // }
   }, []);
 
   const addProduct = (product) => {
+    toast(`${product.drink} added to your daily selections!`, {
+      position: toast.POSITION.BOTTOM_LEFT,
+      autoClose: 2000
+    });
     const copy = [...usersSelections];
     copy.push(product);
     setUsersSelections([...copy]);
@@ -89,7 +107,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Nav />
+        <Nav/>
+        <ToastContainer progressClassName="toastProgress"bodyClassName="toastBody"/>
         <Routes>
           <Route
             exact
@@ -110,6 +129,8 @@ function App() {
               <DailyAnalysis
                 usersSelections={usersSelections}
                 caffeine={caffeine}
+                emoji={emoji}
+                emojiMeaning={emojiMeaning}
               />
             }
           />
