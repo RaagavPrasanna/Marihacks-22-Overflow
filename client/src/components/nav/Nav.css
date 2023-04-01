@@ -35,7 +35,16 @@
 #LinkHome {
   position: absolute;
   left: 35px;
-  top: 0px;
+}
+
+#DailyAnalysis {
+  position: absolute;
+  right: 200px;
+}
+
+#WeeklyAnalysis{
+  position:absolute;
+  right:0; 
 }
 
 a:hover {
