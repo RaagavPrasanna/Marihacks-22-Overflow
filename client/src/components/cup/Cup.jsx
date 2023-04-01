@@ -134,7 +134,6 @@ const Cup = ({ caffeine }) => {
               {emoji}
             </h1>
           </div>
-
           <div className="glass"></div>
           <div className="water-ctr">
             <div className="water"></div>
