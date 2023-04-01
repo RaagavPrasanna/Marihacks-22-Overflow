@@ -11,7 +11,7 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 
-function SearchBar({ placeholder, data , addProduct}) {
+function SearchBar({ placeholder, data, addProduct }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
@@ -64,11 +64,9 @@ function SearchBar({ placeholder, data , addProduct}) {
         <FitnessCenterIcon style={{marginRight: "20px"}}/>
       )
     } else {
-      return (
-        <MoreHorizIcon style={{marginRight: "20px"}}/>
-      )
+      return <MoreHorizIcon style={{ marginRight: "20px" }} />;
     }
-  }
+  };
 
   return (
     <div className="search">
@@ -83,7 +81,7 @@ function SearchBar({ placeholder, data , addProduct}) {
           {filteredData.length === 0 ? (
             <SearchIcon />
           ) : (
-            <CloseIcon id="clearBtn" onClick={clearInput}/>
+            <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
         </div>
       </div>
@@ -91,10 +89,27 @@ function SearchBar({ placeholder, data , addProduct}) {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <div className="dropDown" key={key} style={{display: "flex", alignItems: "center"}} onClick={() => addProduct(value)}>
+              <div className="dropDown"
+                key={key}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+                onClick={() => addProduct(value)}
+              >
                 {getPic(value.type)}
-                <p style={{marginLeft: "20px"}}className="dataItem" key={key} onClick={() => console.log(value)}>{value.drink} </p>
-                <p style={{marginLeft: "20px"}} className="dataItem">{value.caffeine}mg</p>
+                <p
+                  style={{ marginLeft: "20px" }}
+                  className="dataItem"
+                  key={key}
+                  onClick={() => console.log(value)}
+                >
+                  {value.drink}{" "}
+                </p>
+                <p style={{ marginLeft: "20px" }} className="dataItem">
+                  {value.caffeine}mg
+                </p>
               </div>
             );
           })}
