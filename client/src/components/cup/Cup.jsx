@@ -11,6 +11,7 @@ const Cup = ({ caffeine }) => {
 
   useEffect(() => {
     console.log("caf changed");
+    console.log(caffeine);
     handleInput(caffeine);
     setLevel(caffeine);
   }, [caffeine]);
@@ -88,7 +89,7 @@ const Cup = ({ caffeine }) => {
     console.log("handling input");
     let caffeine = num;
     switch (true) {
-      case caffeine > 0 && caffeine < 100:
+      case caffeine >= 0 && caffeine < 100:
         console.log("first");
         handleLevelChange("first");
         break;
