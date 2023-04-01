@@ -9,12 +9,18 @@ import MainPage from "./components/home/MainPage.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<MainPage/>} />
-          <Route exact path="/Analysis" element={<Analysis/>} />
-        </Routes>
-        <App />
-      </BrowserRouter>
+    <App/>
   </React.StrictMode>,
 )
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <BrowserRouter>
+//         <Routes>
+//           <Route exact path="/" element={<MainPage/>} />
+//           <Route exact path="/Analysis" element={<Analysis/>} />
+//         </Routes>
+//         <App />
+//       </BrowserRouter>
+//   </React.StrictMode>,
+// )
