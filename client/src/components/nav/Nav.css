@@ -1,20 +1,21 @@
-.NavBar{
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 80px;
-    vertical-align: middle;
+.NavBar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  vertical-align: middle;
+  z-index: 10000;
 }
 
-.NavElement{
-    background-color: #C8B286;
-    position: relative;
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    vertical-align: middle;
+.NavElement {
+  background-color: #c8b286;
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
 }
 
 .Link{
@@ -23,6 +24,7 @@
     font-size: 1.05em;
     align-self: center;
     font-weight: 1000;
+    transition: 0.3s;
 }
 
 .Link:hover{
@@ -30,40 +32,48 @@
     background-color: #C8B286;
 }
 
-#LinkHome{
-    position: absolute;
-    left:35px;
-    top: 0px;
+#LinkHome {
+  position: absolute;
+  left: 35px;
 }
 
-a:hover{
-    background-color: transparent;
+#DailyAnalysis {
+  position: absolute;
+  right: 200px;
 }
 
-#coffeeImg{
-    top: 0;
-    left: 0;
-    animation-name: spin;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
-    animation-direction: alternate;
+#WeeklyAnalysis{
+  position:absolute;
+  right:0; 
 }
 
+a:hover {
+  background-color: transparent;
+}
+
+#coffeeImg {
+  top: 0;
+  left: 0;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
 
 @keyframes spin {
-    from {
-        transform:rotate(-25deg);
-        -webkit-transform:rotate(-25deg);
-        -moz-transform:rotate(-25deg);
-        -ms-transform:rotate(-25deg);
-        -o-transform:rotate(-25deg);
-}
-    to {
-        transform:rotate(25deg);
-        -webkit-transform:rotate(25deg);
-        -moz-transform:rotate(25deg);
-        -ms-transform:rotate(25deg);
-        -o-transform:rotate(25deg);
-}
+  from {
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    -o-transform: rotate(-25deg);
+  }
+  to {
+    transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    -o-transform: rotate(25deg);
+  }
 }
