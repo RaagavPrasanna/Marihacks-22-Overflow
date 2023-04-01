@@ -9,6 +9,7 @@ import SpaIcon from '@mui/icons-material/Spa';
 import WaterIcon from '@mui/icons-material/Water';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 
 function SearchBar({ placeholder, data , addProduct}) {
   const [filteredData, setFilteredData] = useState([]);
@@ -34,7 +35,7 @@ function SearchBar({ placeholder, data , addProduct}) {
   };
 
   const getPic = (type) => {
-    if(type === "coffee") {
+    if(type === "Coffee") {
       return (
         <CoffeeIcon style={{marginRight: "20px"}}/>
       )
@@ -45,6 +46,10 @@ function SearchBar({ placeholder, data , addProduct}) {
     } else if(type === "Energy Shots") {
       return (
         <MedicationIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Soft Drinks") {
+      return (
+        <BubbleChartIcon style={{marginRight: "20px"}}/>
       )
     } else if(type === "Tea") {
       return (
