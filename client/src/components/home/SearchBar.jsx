@@ -29,7 +29,7 @@ function SearchBar({ placeholder, data , addProduct}) {
   return (
     <div className="search">
       <div className="searchInputs">
-        <input
+        <input id="inputElement"
           type="text"
           placeholder={placeholder}
           value={wordEntered}
@@ -47,7 +47,7 @@ function SearchBar({ placeholder, data , addProduct}) {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <div style={{display: "flex", alignItems: "center"}} onClick={() => addProduct(value)}>
+              <div className="dropDown" style={{display: "flex", alignItems: "center"}} onClick={() => addProduct(value)}>
                 <CoffeeIcon style={{marginRight: "20px"}}/>
                 <p style={{marginLeft: "20px"}}className="dataItem" key={key} onClick={() => console.log(value)}>{value.drink} </p>
                 <p style={{marginLeft: "20px"}} className="dataItem">{value.caffeine}mg</p>

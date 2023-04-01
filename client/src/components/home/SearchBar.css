@@ -1,7 +1,11 @@
 .searchInputs {
     margin-top: 105px;
     display: flex;
-  }
+}
+
+#inputElement{
+  border-radius: 5px;
+}
   
   .search input {
     background-color: white;
@@ -14,6 +18,25 @@
     height: 30px;
     width: 300px;
   }
+
+  .dropDown{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: "flex";
+    padding-left:5%;
+    justify-content: space-between;
+  }
+
+  .dataResult{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
   
   .searchIcon {
     height: 60px;
@@ -21,6 +44,8 @@
     background-color: white;
     display: grid;
     place-items: center;
+    border-radius: 5px;
+    margin-left: 6px;
   }
   
   input:focus {
@@ -32,8 +57,11 @@
   
   .dataResult {
     margin-top: 5px;
-    width: 300px;
-    height: 200px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: 400px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
@@ -52,6 +80,7 @@
     width: 100%;
     height: 50px;
     display: flex;
+    justify-content: center;
     align-items: center;
     color: black;
   }

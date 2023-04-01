@@ -32,6 +32,10 @@
     top: 0px;
 }
 
+a:hover{
+    background-color: transparent;
+}
+
 #coffeeImg{
     top: 0;
     left: 0;
