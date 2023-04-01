@@ -18,6 +18,7 @@
   height: 90%;
   background-color: #E9DAC4  ;
   padding-bottom:2%;
+  border-radius: 5px;
 }
 
 .productList::-webkit-scrollbar {
