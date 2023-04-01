@@ -74,7 +74,11 @@ function SearchBar({ placeholder, data, addProduct }) {
             return (
               <div
                 key={key}
-                style={{ display: "flex", alignItems: "center" }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
                 onClick={() => addProduct(value)}
               >
                 {getPic(value.type)}
