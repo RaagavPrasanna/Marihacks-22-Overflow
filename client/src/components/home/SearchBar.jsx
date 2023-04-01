@@ -34,7 +34,7 @@ function SearchBar({ placeholder, data , addProduct}) {
   };
 
   const getPic = (type) => {
-    if(type === "coffee") {
+    if(type === "Coffee") {
       return (
         <CoffeeIcon style={{marginRight: "20px"}}/>
       )

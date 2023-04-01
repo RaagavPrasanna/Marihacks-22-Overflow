@@ -3,7 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import MainPage from "./components/home/MainPage.jsx"
-import Analysis from "./components/analysis/Analysis.jsx"
+import DailyAnalysis from "./components/dailyanalysis/DailyAnalysis.jsx"
+import WeeklyAnalysis from "./components/weeklyanalysis/WeeklyAnalysis.jsx"
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Nav from "./components/nav/Nav.jsx";
 
@@ -44,8 +45,9 @@ function App() {
       <BrowserRouter>
         <Nav/>
         <Routes>
-          <Route exact path="/" element={<MainPage usersSelections={usersSelections} clearSelections={clearSelections} addProduct={addProduct} />} />
-          <Route exact path="/Analysis" element={<Analysis/>} />
+          <Route exact path="/" element={<MainPage usersSelections={usersSelections} clearSelections={clearSelections} addProduct={addProduct}/>} />
+          <Route exact path="/DailyAnalysis" element={<DailyAnalysis usersSelections={usersSelections} caffeine={caffeine}/>} />
+          <Route exact path="/WeeklyAnalysis" element={<WeeklyAnalysis usersSelections={usersSelections}/>} />
         </Routes>
       </BrowserRouter>
     </div>
