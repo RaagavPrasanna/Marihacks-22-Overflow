@@ -1,0 +1,61 @@
+.NavBar{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 80px;
+    vertical-align: middle;
+}
+
+.NavElement{
+    background-color: #C8B286;
+    position: relative;
+    display: flex;
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.Link{
+    color: black;
+    margin: 2em;
+}
+
+.Link:hover{
+    color: white;
+}
+
+#LinkHome{
+    position: absolute;
+    left:35px;
+    top: 0px;
+}
+
+#coffeeImg{
+    top: 0;
+    left: 0;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-direction: alternate;
+}
+
+
+@keyframes spin {
+    from {
+        transform:rotate(-25deg);
+        -webkit-transform:rotate(-25deg);
+        -moz-transform:rotate(-25deg);
+        -ms-transform:rotate(-25deg);
+        -o-transform:rotate(-25deg);
+}
+    to {
+        transform:rotate(25deg);
+        -webkit-transform:rotate(25deg);
+        -moz-transform:rotate(25deg);
+        -ms-transform:rotate(25deg);
+        -o-transform:rotate(25deg);
+}
+}
