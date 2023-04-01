@@ -130,7 +130,7 @@ const Cup = ({ caffeine }) => {
       <div className="container">
         <div className="glass-ctr">
           <div className="caffeine-number">
-            <h1 style={{ color: "white" }}>
+            <h1 className="num">
               {level}
               {emoji}
             </h1>
