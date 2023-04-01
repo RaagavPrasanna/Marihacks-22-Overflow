@@ -3,6 +3,10 @@
     display: flex;
 }
 
+.search{
+  margin-left: 3em;
+}
+
 #inputElement{
   border-radius: 5px;
 }
