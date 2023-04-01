@@ -1,18 +1,23 @@
 .main {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
   background-color: #ece6e1;
 }
 
-.left {
+.left{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  height: 100%;
-  align-items: baseline;
+  flex: 1;
+  order:1;
+}
+
+.Cup{
+  order: 2;
+  flex:2;
+}
+
+.clearButton{
+  width: auto;
+  height: 10%;
 }

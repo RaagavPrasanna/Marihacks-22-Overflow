@@ -8,12 +8,12 @@ function DailyAnalysis(props) {
   return (
     <div className="DailyAnalysis">
       <div className='left'>
-          <h1> Daily Analysis </h1>
+          <h2> Daily Analysis </h2>
           <div className='emojiDiv'>
             <p> {props.emojiMeaning}</p>
             <p className='emoji'> {props.emoji} </p>
           </div>
-          <p className='totalConsumption'> You have consumed: {props.caffeine} mg of Caffeine today!</p>
+          <p className='totalConsumption'> You have consumed: <b>{props.caffeine} </b>mg of Caffeine today!</p>
         </div>
         <div className='right'>
           <h2> Products Consumed </h2>
