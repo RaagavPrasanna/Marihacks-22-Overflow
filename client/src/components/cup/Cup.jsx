@@ -7,6 +7,7 @@ import { TextField, Slider } from "@mui/material";
 const Cup = ({ caffeine }) => {
   const maxLevel = 1000;
   const [level, setLevel] = useState(caffeine);
+  const [emoji, setEmoji] = useState("☕");
 
   useEffect(() => {
     console.log("caf changed");
@@ -23,6 +24,7 @@ const Cup = ({ caffeine }) => {
         console.log("setting first");
         console.log(water.classList);
         water.classList.add("first");
+        setEmoji("😴");
         break;
       case "second":
         water.className = "water";
@@ -31,38 +33,53 @@ const Cup = ({ caffeine }) => {
         console.log(water.classList);
 
         water.classList.add("second");
+        setEmoji("🥱");
         break;
       case "third":
         water.className = "water";
         water.classList.add("third");
+        setEmoji("🙂");
         break;
       case "fourth":
         water.className = "water";
         water.classList.add("fourth");
+        setEmoji("😁");
+
         break;
       case "fifth":
         water.className = "water";
         water.classList.add("fifth");
+        setEmoji("🤨");
+
         break;
       case "sixth":
         water.className = "water";
         water.classList.add("sixth");
+        setEmoji("😐");
+
         break;
       case "seventh":
         water.className = "water";
         water.classList.add("seventh");
+        setEmoji("😲");
+
         break;
       case "eighth":
         water.className = "water";
         water.classList.add("eighth");
+        setEmoji("😡");
+
         break;
       case "ninth":
         water.className = "water";
         water.classList.add("ninth");
+        setEmoji("🤯");
+
         break;
       case "tenth":
         water.className = "water";
         water.classList.add("tenth");
+        setEmoji("💀");
         break;
     }
   };
@@ -112,7 +129,10 @@ const Cup = ({ caffeine }) => {
       <div className="container">
         <div className="glass-ctr">
           <div className="caffeine-number">
-            <h1>{level}</h1>
+            <h1>
+              {level}
+              {emoji}
+            </h1>
           </div>
 
           <div className="glass"></div>
