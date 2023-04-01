@@ -42,7 +42,7 @@ function DailyAnalysis(props) {
             {props.usersSelections.map((product) => {
               return (
                 <div className="Product">
-                  <h3>{product.drink}</h3>
+                  <p>{product.drink}</p>
                 </div>
               )
             })}
