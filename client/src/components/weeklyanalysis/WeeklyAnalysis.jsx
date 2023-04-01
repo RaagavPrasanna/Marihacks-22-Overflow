@@ -70,13 +70,13 @@ function WeeklyAnalysis({usersSelections, days}) {
           label: "Weekly Caffeine Intake",
           data: calculateCaffeine(weeklyData),
           backgroundColor: [
-            "rgba(144, 92, 24, 0.8)",
-            "rgba(193, 154, 107, 0.8)",
-            "rgba(111, 92, 24, 0.8)",
-            "rgba(144, 92, 24, 0.8)",
-            "rgba(144, 92, 24, 0.8)",
-            "rgba(144, 92, 24, 0.8)",
-            "rgba(144, 92, 24, 0.8)"
+            "rgba(144, 92, 24, 0.45)",
+            "rgba(193, 154, 107, 0.45)",
+            "rgba(111, 92, 24, 0.45)",
+            "rgba(196, 164, 132, 0.45)",
+            "rgba(210, 180, 140, 0.45)",
+            "rgba(123, 63, 0, 0.45)",
+            "rgba(150, 105, 25, 0.45)"
           ],
           borderColor: "black",
           borderWidth: 2

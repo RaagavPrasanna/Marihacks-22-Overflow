@@ -17,15 +17,14 @@ function MainPage({ usersSelections, clearSelections, addProduct, caffeine }) {
         />
         {/* <Selections usersSelections={usersSelections} /> */}
       </div>
-      <Button
-        className="clearButton"
+      {/* <Button className="clearButton"
         onClick={() => {
           clearSelections();
         }}
         variant="contained"
       >
         CLEAR
-      </Button>
+      </Button> */}
 
       <Cup className="Cup" caffeine={caffeine} />
     </div>

@@ -1,12 +1,12 @@
 .DailyAnalysis {
-  position: absolute;
-  top: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  height: 75%;
-  color: black;
+    position: absolute;
+    color: black;
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 75%;
 }
 
 .left {

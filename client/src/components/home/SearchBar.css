@@ -1,6 +1,7 @@
 .searchInputs {
-  margin-top: 105px;
-  display: flex;
+    margin-top: 105px;
+    display: flex;
+    color: black;
 }
 
 .search {

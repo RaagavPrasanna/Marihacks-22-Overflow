@@ -3,6 +3,7 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   height: 100%;
+  color:black;
   background-color: #ece6e1;
   color: black;
 }
