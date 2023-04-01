@@ -22,8 +22,8 @@
 .glass {
   width: 300px;
   height: 420px;
-  /* background-color: rgb(255, 255, 255); */
-  background-color: rgba(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  /* background-color: rgba(0, 0, 0); */
   position: absolute;
   -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
@@ -48,16 +48,6 @@
   background-size: contain;
   position: relative;
   z-index: 1;
-}
-
-.high {
-  animation: high 10s;
-  animation-fill-mode: forwards;
-}
-
-.low {
-  animation: first 10s;
-  animation-fill-mode: forwards;
 }
 
 .first {

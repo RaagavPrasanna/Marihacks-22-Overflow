@@ -5,20 +5,21 @@
   height: 100%;
   color:black;
   background-color: #ece6e1;
+  color: black;
 }
 
-.left{
+.left {
   display: flex;
   flex: 1;
-  order:1;
+  order: 1;
 }
 
-.Cup{
+.Cup {
   order: 2;
-  flex:2;
+  flex: 2;
 }
 
-.clearButton{
+.clearButton {
   width: auto;
   height: 10%;
 }
