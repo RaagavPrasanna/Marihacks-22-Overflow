@@ -2,14 +2,32 @@
     position: absolute;
     top: 100px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 75%;
 }
 
 .left{
-    flex: 1
+    margin: 2%;
+    order:1;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
 }
 
+.productList::-webkit-scrollbar {
+    display: none;
+  }
+
 .right {
-    flex: 1;
+    margin: 2%;
+    order: 2;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
 }
 
 h1 {
@@ -24,16 +42,30 @@ h1 {
 
 .emojiDiv {
     justify-content: center;
-    margin-top: 100px;
-    margin-left: 50px;
+    padding: 2%
 }
 
 .totalConsumption {
     margin-left: 20px;
-    font-size: xx-large;
+    font-size: large;
 }
 
 .productList {
-    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    max-height: 65vh;
+    width: 60%;
     overflow: auto;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-box-shadow: 2px 5px 15px 2px rgba(0,0,0,0.55); 
+    box-shadow: 2px 5px 15px 2px rgba(0,0,0,0.55);
+}
+
+.Product{
+    font-size:17px;
 }

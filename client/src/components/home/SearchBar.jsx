@@ -71,7 +71,7 @@ function SearchBar({ placeholder, data, addProduct }) {
   return (
     <div className="search">
       <div className="searchInputs">
-        <input
+        <input id="inputElement"
           type="text"
           placeholder={placeholder}
           value={wordEntered}
@@ -89,7 +89,7 @@ function SearchBar({ placeholder, data, addProduct }) {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <div
+              <div className="dropDown"
                 key={key}
                 style={{
                   display: "flex",
