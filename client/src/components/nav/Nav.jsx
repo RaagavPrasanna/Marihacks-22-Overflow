@@ -9,7 +9,7 @@ function NavBar({usersSelections}) {
         <nav className='NavElement'>
             <img src={coffee} alt="CoffeeLogo" id="coffeeImg"></img>
             <Link to="/" className="Link" id="LinkHome"> <b>OverFlow </b>  </Link>
-            <Link to="/Analysis" className="Link" state={{usersSelections: usersSelections}} id="LinkAnalysis"> Analysis </Link>
+            <Link to={{pathname: "/Analysis",state:{usersSelections: usersSelections} }} className="Link" id="LinkAnalysis"> Analysis </Link>
         </nav>
     </div>
   )
