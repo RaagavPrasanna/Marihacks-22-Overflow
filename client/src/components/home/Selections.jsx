@@ -7,8 +7,8 @@ export default function Selections({usersSelections}) {
         <div className="dataResult">
           {usersSelections.map((value, key) => {
             return (
-              <div key={key} style={{display: "flex", alignItems: "center"}}>
-                <p style={{marginLeft: "20px"}}className="dataItem" key={key} onClick={() => console.log(value)}>{value.drink} </p>
+              <div style={{display: "flex", alignItems: "center"}}>
+                <p style={{marginLeft: "20px"}}className="dataItem" key={key}>{value.drink} </p>
                 <p style={{marginLeft: "20px"}} className="dataItem">{value.caffeine}mg</p>
               </div>
             );
