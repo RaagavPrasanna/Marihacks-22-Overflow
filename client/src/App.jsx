@@ -116,7 +116,7 @@ function App() {
           <Route
             exact
             path="/WeeklyAnalysis"
-            element={<WeeklyAnalysis usersSelections={usersSelections} />}
+            element={<WeeklyAnalysis usersSelections={usersSelections} days={days}/>}
           />
         </Routes>
       </BrowserRouter>
