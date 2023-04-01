@@ -7,6 +7,8 @@ import DailyAnalysis from "./components/dailyanalysis/DailyAnalysis.jsx"
 import WeeklyAnalysis from "./components/weeklyanalysis/WeeklyAnalysis.jsx"
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Nav from "./components/nav/Nav.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -20,6 +22,7 @@ function App() {
       return acc + curr.caffeine;
     }, 0);
     setCaffeine(caffeine);
+    localStorage.setItem("caffeine", JSON.stringify(caffeine));
   }, [usersSelections])
 
   useEffect(() => {
@@ -37,6 +40,10 @@ function App() {
   }, []);
 
   const addProduct = (product) => {
+    toast(`${product.drink} added to your daily selections!`, {
+      position: toast.POSITION.BOTTOM_LEFT,
+      autoClose: 2000
+    });
     const copy = [...usersSelections];
     copy.push(product);
     setUsersSelections([...copy]);
@@ -71,6 +78,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Nav/>
+        <ToastContainer progressClassName="toastProgress"
+  bodyClassName="toastBody"/>
         <Routes>
           <Route exact path="/" element={<MainPage usersSelections={usersSelections} clearSelections={clearSelections} addProduct={addProduct}/>} />
           <Route exact path="/DailyAnalysis" element={<DailyAnalysis usersSelections={usersSelections} caffeine={caffeine}/>} />

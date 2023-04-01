@@ -7,24 +7,38 @@ function DailyAnalysis(props) {
   const [emojiMeaning, setEmojiMeaning] = useState("Coffee!")
 
   useEffect(() => {
-      if (props.caffeine <= 200){
-        setEmojiMeaning("You need more caffeine!")
-        setEmoji("😴")
-      } else if (props.caffeine <= 500 && props.caffeine > 200){
-        setEmojiMeaning("You are doing great!")
-        setEmoji("😖")
-      } else if (props.caffeine <= 700 && props.caffeine > 500){
-        setEmojiMeaning("You are around the recommended amount!")
-        setEmoji("😁")
-      } else if (props.caffeine <= 1000 && props.caffeine > 700){
-        setEmojiMeaning("You are over the recommended amount!")
-        setEmoji("😵")
-      } else if(props.caffeine > 1000){
-        setEmojiMeaning("TOO MUCH CAFFEINE!")
-        setEmoji("☠️")
-      }
+    if(localStorage.getItem("emoji") === null){
+        if (props.caffeine <= 200){
+          setEmojiMeaning("You need more caffeine!")
+          localStorage.setItem("emojiMeaning", "You need more caffeine!")
+          localStorage.setItem("emoji", "😴")
+          setEmoji("😴")
+        } else if (props.caffeine <= 500 && props.caffeine > 200){
+          setEmojiMeaning("You are doing great!")
+          localStorage.setItem("emojiMeaning", "You are doing great!")
+          localStorage.setItem("emoji", "😖")
+          setEmoji("😖")
+        } else if (props.caffeine <= 700 && props.caffeine > 500){
+          setEmojiMeaning("You are around the recommended amount!")
+          localStorage.setItem("emojiMeaning", "You are around the recommended amount!")
+          localStorage.setItem("emoji", "😁")
+          setEmoji("😁")
+        } else if (props.caffeine <= 1000 && props.caffeine > 700){
+          setEmojiMeaning("You are over the recommended amount!")
+          localStorage.setItem("emojiMeaning", "You are over the recommended amount!")
+          localStorage.setItem("emoji", "😵")
+          setEmoji("😵")
+        } else if(props.caffeine > 1000){
+          setEmojiMeaning("TOO MUCH CAFFEINE!")
+          localStorage.setItem("emojiMeaning", "TOO MUCH CAFFEINE!")
+          localStorage.setItem("emoji", "☠️")
+          setEmoji("☠️")
+        }
+    } else {
+      setEmoji(localStorage.getItem("emoji"))
+      setEmojiMeaning(localStorage.getItem("emojiMeaning"))
+    }
   }, [props.usersSelections])
-
 
   return (
     <div className="DailyAnalysis">

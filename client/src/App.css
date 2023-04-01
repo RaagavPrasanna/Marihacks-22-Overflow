@@ -1,0 +1,8 @@
+  .toastBody {
+    font-family: "Roboto" !important;
+    color: #10171D; /* #10171D */
+    font-size: 1rem !important;
+  }
+  .toastProgress {
+    background: burlywood !important;
+  }
