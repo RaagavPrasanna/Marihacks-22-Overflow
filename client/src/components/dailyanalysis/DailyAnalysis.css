@@ -1,8 +1,39 @@
 .DailyAnalysis {
     position: absolute;
     top: 100px;
+    display: flex;
 }
 
-h2 {
-    margin-bottom: 100px;
+.left{
+    flex: 1
+}
+
+.right {
+    flex: 1;
+}
+
+h1 {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.emoji {
+    font-size: 200px;
+    margin: 0 auto;
+}
+
+.emojiDiv {
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.totalConsumption {
+    margin-left: 20px;
+    font-size: xx-large;
+}
+
+.productList {
+    max-height: 200px;
+    overflow: auto;
 }
