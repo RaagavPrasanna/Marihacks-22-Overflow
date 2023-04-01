@@ -1,6 +1,7 @@
 .searchInputs {
     margin-top: 105px;
     display: flex;
+    color: black;
 }
 
 .search{
@@ -10,6 +11,7 @@
 
 #inputElement{
   border-radius: 5px;
+  color: black;
 }
   
   .search input {
