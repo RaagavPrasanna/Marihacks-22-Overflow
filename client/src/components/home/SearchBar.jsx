@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
-import SearchIcon from "@mui/icons-material/Search";
-import CloseIcon from "@mui/icons-material/Close";
-import CoffeeIcon from "@mui/icons-material/Coffee";
-import BoltIcon from "@mui/icons-material/Bolt";
-import MedicationIcon from "@mui/icons-material/Medication";
-import SpaIcon from "@mui/icons-material/Spa";
-import WaterIcon from "@mui/icons-material/Water";
-import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+import CoffeeIcon from '@mui/icons-material/Coffee';
+import BoltIcon from '@mui/icons-material/Bolt';
+import MedicationIcon from '@mui/icons-material/Medication';
+import SpaIcon from '@mui/icons-material/Spa';
+import WaterIcon from '@mui/icons-material/Water';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 
 function SearchBar({ placeholder, data, addProduct }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -34,18 +35,34 @@ function SearchBar({ placeholder, data, addProduct }) {
   };
 
   const getPic = (type) => {
-    if (type === "Coffee") {
-      return <CoffeeIcon style={{ marginRight: "20px" }} />;
-    } else if (type === "Energy Drinks") {
-      return <BoltIcon style={{ marginRight: "20px" }} />;
-    } else if (type === "Energy Shots") {
-      return <MedicationIcon style={{ marginRight: "20px" }} />;
-    } else if (type === "Tea") {
-      return <SpaIcon style={{ marginRight: "20px" }} />;
-    } else if (type === "Water") {
-      return <WaterIcon style={{ marginRight: "20px" }} />;
-    } else if (type === "PreWorkout") {
-      return <FitnessCenterIcon style={{ marginRight: "20px" }} />;
+    if(type === "Coffee") {
+      return (
+        <CoffeeIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Energy Drinks") {
+      return (
+        <BoltIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Energy Shots") {
+      return (
+        <MedicationIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Soft Drinks") {
+      return (
+        <BubbleChartIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Tea") {
+      return (
+        <SpaIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Water") {
+      return (
+        <WaterIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "PreWorkout") {
+      return (
+        <FitnessCenterIcon style={{marginRight: "20px"}}/>
+      )
     } else {
       return <MoreHorizIcon style={{ marginRight: "20px" }} />;
     }

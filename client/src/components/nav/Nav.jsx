@@ -9,7 +9,8 @@ function NavBar({usersSelections}) {
         <nav className='NavElement'>
             <img src={coffee} alt="CoffeeLogo" id="coffeeImg"></img>
             <Link to="/" className="Link" id="LinkHome"> <b>OverFlow </b>  </Link>
-            <Link to="/Analysis" className="Link" id="LinkAnalysis"> Analysis </Link>
+            <Link to="/DailyAnalysis" className="Link" id="LinkAnalysis"> Daily Analysis </Link>
+            <Link to="/WeeklyAnalysis" className="Link" id="LinkAnalysis"> Weekly Analysis </Link>
         </nav>
     </div>
   )
