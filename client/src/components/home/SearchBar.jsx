@@ -3,6 +3,14 @@ import "./SearchBar.css";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import CoffeeIcon from '@mui/icons-material/Coffee';
+import BoltIcon from '@mui/icons-material/Bolt';
+import MedicationIcon from '@mui/icons-material/Medication';
+import SpaIcon from '@mui/icons-material/Spa';
+import WaterIcon from '@mui/icons-material/Water';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import BubbleChartIcon from '@mui/icons-material/BubbleChart';
+
 function SearchBar({ placeholder, data , addProduct}) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
@@ -26,6 +34,42 @@ function SearchBar({ placeholder, data , addProduct}) {
     setWordEntered("");
   };
 
+  const getPic = (type) => {
+    if(type === "Coffee") {
+      return (
+        <CoffeeIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Energy Drinks") {
+      return (
+        <BoltIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Energy Shots") {
+      return (
+        <MedicationIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Soft Drinks") {
+      return (
+        <BubbleChartIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Tea") {
+      return (
+        <SpaIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "Water") {
+      return (
+        <WaterIcon style={{marginRight: "20px"}}/>
+      )
+    } else if(type === "PreWorkout") {
+      return (
+        <FitnessCenterIcon style={{marginRight: "20px"}}/>
+      )
+    } else {
+      return (
+        <MoreHorizIcon style={{marginRight: "20px"}}/>
+      )
+    }
+  }
+
   return (
     <div className="search">
       <div className="searchInputs">
@@ -47,8 +91,8 @@ function SearchBar({ placeholder, data , addProduct}) {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <div className="dropDown" style={{display: "flex", alignItems: "center"}} onClick={() => addProduct(value)}>
-                <CoffeeIcon style={{marginRight: "20px"}}/>
+              <div className="dropDown" key={key} style={{display: "flex", alignItems: "center"}} onClick={() => addProduct(value)}>
+                {getPic(value.type)}
                 <p style={{marginLeft: "20px"}}className="dataItem" key={key} onClick={() => console.log(value)}>{value.drink} </p>
                 <p style={{marginLeft: "20px"}} className="dataItem">{value.caffeine}mg</p>
               </div>
