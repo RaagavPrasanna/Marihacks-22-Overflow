@@ -40,7 +40,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <>
       <BrowserRouter>
         <Nav/>
         <Routes>
@@ -48,7 +48,7 @@ function App() {
           <Route exact path="/Analysis" element={<Analysis/>} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   )
 }
 

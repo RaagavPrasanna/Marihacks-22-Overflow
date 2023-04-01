@@ -6,11 +6,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(
-    circle,
-    rgba(255, 226, 128, 1) 0%,
-    rgba(255, 223, 115, 1) 100%
-  );
+
+  margin: 50vh auto 0;
+  transform: translateY(-50%);
 }
 
 .glass-ctr {
@@ -25,8 +23,8 @@
 .glass {
   width: 300px;
   height: 420px;
-  background-color: rgb(255, 255, 255);
-  /* background-color: rgba(0, 0, 0); */
+  /* background-color: rgb(255, 255, 255); */
+  background-color: rgba(0, 0, 0);
   position: absolute;
   -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
