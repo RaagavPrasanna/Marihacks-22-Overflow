@@ -7,7 +7,7 @@ function DailyAnalysis(props) {
 
   return (
     <div className="DailyAnalysis">
-      <div className='left'>
+      <div className='leftSide'>
           <h2> Daily Analysis </h2>
           <div className='emojiDiv'>
             <p> {props.emojiMeaning}</p>
