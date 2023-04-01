@@ -15,9 +15,9 @@ function MainPage({ usersSelections, clearSelections, addProduct, caffeine }) {
           placeholder="Enter product name"
           data={data}
         />
-        <Selections usersSelections={usersSelections} />
+        {/* <Selections usersSelections={usersSelections} /> */}
       </div>
-      <Button
+      <Button className="clearButton"
         onClick={() => {
           clearSelections();
         }}
@@ -26,7 +26,7 @@ function MainPage({ usersSelections, clearSelections, addProduct, caffeine }) {
         CLEAR
       </Button>
 
-      <Cup caffeine={caffeine} />
+      <Cup className="Cup" caffeine={caffeine} />
     </div>
   );
 }
