@@ -3,13 +3,13 @@ import coffee from "./coffeeImg.png";
 import { Link } from "react-router-dom";
 import './Nav.css';
 
-function NavBar() {
+function NavBar({usersSelections}) {
   return (
     <div className="NavBar">
         <nav className='NavElement'>
             <img src={coffee} alt="CoffeeLogo" id="coffeeImg"></img>
             <Link to="/" className="Link" id="LinkHome"> <b>OverFlow </b>  </Link>
-            <Link to="/Analysis" className="Link" id="LinkAnalysis"> Analysis </Link>
+            <Link to={{pathname: "/Analysis",state:{usersSelections: usersSelections} }} className="Link" id="LinkAnalysis"> Analysis </Link>
         </nav>
     </div>
   )
