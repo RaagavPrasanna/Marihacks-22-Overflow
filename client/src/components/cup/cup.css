@@ -221,3 +221,7 @@
   position: absolute;
   z-index: 10000;
 }
+
+.caffeine-number h1 {
+  margin: auto;
+}

@@ -1,11 +1,18 @@
 import "./cup.css";
-import * as React from "react";
+import { useState, useEffect } from "react";
+
 import Button from "@mui/material/Button";
 import { TextField, Slider } from "@mui/material";
 
-const Cup = () => {
+const Cup = ({ caffeine }) => {
   const maxLevel = 1000;
-  const [level, setLevel] = React.useState(0);
+  const [level, setLevel] = useState(caffeine);
+
+  useEffect(() => {
+    console.log("caf changed");
+    handleInput(caffeine);
+    setLevel(caffeine);
+  }, [caffeine]);
 
   const handleLevelChange = (levelType) => {
     const water = document.querySelector(".water");
@@ -60,10 +67,9 @@ const Cup = () => {
     }
   };
 
-  const handleInput = (e) => {
-    console.log(e.target.value);
-    setLevel(e.target.value);
-    let caffeine = e.target.value;
+  const handleInput = (num) => {
+    console.log("handling input");
+    let caffeine = num;
     switch (true) {
       case caffeine > 0 && caffeine < 100:
         console.log("first");
@@ -95,7 +101,7 @@ const Cup = () => {
       case caffeine > 800 && caffeine < 900:
         handleLevelChange("ninth");
         break;
-      case caffeine > 900 && caffeine < maxLevel:
+      case caffeine > 900:
         handleLevelChange("tenth");
         break;
     }
@@ -115,20 +121,6 @@ const Cup = () => {
           </div>
         </div>
       </div>
-      <TextField
-        variant={"filled"}
-        sx={{ color: "white" }}
-        inputProps={{ inputMode: "numeric", pattern: "[0-9]" }}
-        onChange={handleInput}
-      />
-      <Slider
-        defaultValue={0}
-        step={10}
-        marks
-        min={10}
-        max={1000}
-        onChange={handleInput}
-      />
     </>
   );
 };
