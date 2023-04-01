@@ -28,11 +28,34 @@
 
 #LinkHome{
     position: absolute;
-    left:25px;
+    left:35px;
     top: 0px;
 }
 
 #coffeeImg{
     top: 0;
     left: 0;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-direction: alternate;
+}
+
+
+@keyframes spin {
+    from {
+        transform:rotate(-25deg);
+        -webkit-transform:rotate(-25deg);
+        -moz-transform:rotate(-25deg);
+        -ms-transform:rotate(-25deg);
+        -o-transform:rotate(-25deg);
+}
+    to {
+        transform:rotate(25deg);
+        -webkit-transform:rotate(25deg);
+        -moz-transform:rotate(25deg);
+        -ms-transform:rotate(25deg);
+        -o-transform:rotate(25deg);
+}
 }
