@@ -74,7 +74,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<MainPage usersSelections={usersSelections} clearSelections={clearSelections} addProduct={addProduct}/>} />
           <Route exact path="/DailyAnalysis" element={<DailyAnalysis usersSelections={usersSelections} caffeine={caffeine}/>} />
-          <Route exact path="/WeeklyAnalysis" element={<WeeklyAnalysis usersSelections={usersSelections}/>} />
+          <Route exact path="/WeeklyAnalysis" element={<WeeklyAnalysis usersSelections={usersSelections} days={days}/>} />
         </Routes>
       </BrowserRouter>
     </div>
